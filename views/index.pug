@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  if registrations.length
+    div
+    table.listing-table.table-dark.table-striped
+      tr
+        th Name
+        th Email
+      each registration in registrations
+        tr
+          td= registration.name
+          td= registration.email
+    div
+      a.btn.btn-lg.btn-primary.btn-block(href='./') Go back
+  else
+    p No registrations yet :(
